@@ -5,4 +5,4 @@
  
 
 Скрип довольно прост и буквально состоит из примера приведенного в начале документации https://douile.github.io/logitech-toggle-keys/APIDocs.pdf , нескольких функций из неё же и функции вычисления в какую  сторону переместилась мышь во время нажатия кнопки. 
-C:\Users\@@@\AppData\Local\LGHUB\scripts\8c7627e0-5550-4393-a3bf-b7d2c1e5a1fa
+C:\Users\XXX\AppData\Local\LGHUB\scripts\8c7627e0-5550-4393-a3bf-b7d2c1e5a1fa
