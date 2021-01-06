@@ -1,0 +1,5 @@
+{
+ "name": "3",
+ "description": "function OnEvent(event, arg)\nif (event == \"PROFILE_ACTIVATED\") then\n-- profile has been activated\nClearLog();\nend\nif (event == \"G_PRESSED\" and arg == 1) then\n-- G1 has been pressed\nClearLCD()\nOutputLCDMessage(\"Hello world1\", 2000)\nSleep(1000)\nSetBacklightColor(255, 0, 0)\nend\nend",
+ "fileName": "./script.lua"
+}
