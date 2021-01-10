@@ -1,3 +1,4 @@
+--main
 x_old=0
 y_old=0
 mode=0
@@ -18,8 +19,8 @@ g4 = {[0]="alttab", [1]="mute", [2]="winctrl+", [3]="", [4]="winctrl-"}--bok blo
 g6 = {[0]="right", [1]="", [2]="", [3]="", [4]="left"}--verxnia 
 
 
-a = 1; -- РїРµСЂРµРјРµРЅРЅР°СЏ Р°  
---while a < 20 do -- РІС‹РїРѕР»РЅСЏС‚СЊ С†РёРєР» РґРѕ С‚РµС… РїРѕСЂ, РїРѕРєР° Р° РјРµРЅСЊС€Рµ 20  
+a = 1; -- Р С—Р ВµРЎР‚Р ВµР СР ВµР Р…Р Р…Р В°РЎРЏ Р В°  
+--while a < 20 do -- Р Р†РЎвЂ№Р С—Р С•Р В»Р Р…РЎРЏРЎвЂљРЎРЉ РЎвЂ Р С‘Р С”Р В» Р Т‘Р С• РЎвЂљР ВµРЎвЂ¦ Р С—Р С•РЎР‚, Р С—Р С•Р С”Р В° Р В° Р СР ВµР Р…РЎРЉРЎв‚¬Р Вµ 20  
   --a = a + 1;  
 --OutputLogMessage("000")
 --mode=1
@@ -49,7 +50,7 @@ function OnEvent(event, arg)
     x_old, y_old= GetMousePosition();
     OutputLogMessage("PRESSED ", x, y, arg);
     a=0
-  --while a < 1 do -- РІС‹РїРѕР»РЅСЏС‚СЊ С†РёРєР» РґРѕ С‚РµС… РїРѕСЂ, РїРѕРєР° Р° РјРµРЅСЊС€Рµ 20  
+  --while a < 1 do -- Р Р†РЎвЂ№Р С—Р С•Р В»Р Р…РЎРЏРЎвЂљРЎРЉ РЎвЂ Р С‘Р С”Р В» Р Т‘Р С• РЎвЂљР ВµРЎвЂ¦ Р С—Р С•РЎР‚, Р С—Р С•Р С”Р В° Р В° Р СР ВµР Р…РЎРЉРЎв‚¬Р Вµ 20  
   a = a + 1   
   --slep(50)
   --MoveMouseRelative(1000, 1)
@@ -60,8 +61,7 @@ function OnEvent(event, arg)
   end
   if (event == "MOUSE_BUTTON_RELEASED" and arg == 3) then
     x, y = GetMousePosition();
-    MoveMouseTo(x_old, y_old)
-    OutputLogMessage( gesture(g3[0],g3[1],g4[2],g3[3],g3[4]))
+    OutputLogMessage( gesture(g3[0],g3[1],g3[2],g3[3],g3[4]))
     OutputLogMessage("RELEASED",x_old, y_old);
 
   end
@@ -74,7 +74,6 @@ function OnEvent(event, arg)
   end
   if (event == "MOUSE_BUTTON_RELEASED" and arg == 5) then
     x, y = GetMousePosition();
-    MoveMouseTo(x_old, y_old)
     OutputLogMessage( gesture(g5[0],g5[1],g5[2],g5[3],g5[4]))
     OutputLogMessage("RELEASED",x_old, y_old);
   end
@@ -87,7 +86,6 @@ function OnEvent(event, arg)
   end
   if (event == "MOUSE_BUTTON_RELEASED" and arg == 4) then
     x, y = GetMousePosition();
-    MoveMouseTo(x_old, y_old)
     OutputLogMessage( gesture(g4[0],g4[1],g4[2],g4[3],g4[4]))
     OutputLogMessage("RELEASED",x_old, y_old);
 
@@ -102,7 +100,6 @@ function OnEvent(event, arg)
   end
   if (event == "MOUSE_BUTTON_RELEASED" and arg == 6) then
     x, y = GetMousePosition();
-    MoveMouseTo(x_old, y_old)
     OutputLogMessage( gesture(g6[0],g6[1],g6[2],g6[3],g6[4]))
     OutputLogMessage("RELEASED",x_old, y_old);
 
@@ -139,11 +136,17 @@ end
 
 
     PlayMacro(m2);
+	if (x_old~=0 and y_old~=0) then
+		MoveMouseTo(x_old, y_old)
+	end
     return 2
   end
   if (xx > (yy)) then--1
 
     PlayMacro(m1);
+	if (x_old~=0 and y_old~=0) then
+		MoveMouseTo(x_old, y_old)
+	end
     return 1
 
   end
@@ -151,12 +154,18 @@ end
   if (abs_xx < (yy)) then--3 if (math.abs(xx) < (yy)) then
 
     PlayMacro(m3);
+	if (x_old~=0 and y_old~=0) then
+		MoveMouseTo(x_old, y_old)
+	end
     return 3
   end
 
   if ((xx) < (yy)) then--4
 
     PlayMacro(m4);
+	if (x_old~=0 and y_old~=0) then
+		MoveMouseTo(x_old, y_old)
+	end
     return 4
   end
 
